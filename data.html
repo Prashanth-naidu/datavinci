@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Checkbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .category {
+      margin-top: 10px;
+    }
+    .items {
+      margin-left: 20px;
+    }
+    label {
+      display: block;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Nested Checkbox</h2>
+
+  <!-- Select All -->
+  <label>
+    <input type="checkbox" id="selectAll">
+    Select All
+  </label>
+
+  <!-- Fruits -->
+  <div class="category">
+    <label>
+      <input type="checkbox" class="category-checkbox" data-category="fruits">
+      Fruits
+    </label>
+    <div class="items">
+      <label><input type="checkbox" class="child-checkbox" data-category="fruits"> Apple</label>
+      <label><input type="checkbox" class="child-checkbox" data-category="fruits"> Banana</label>
+      <label><input type="checkbox" class="child-checkbox" data-category="fruits"> Orange</label>
+    </div>
+  </div>
+
+  <!-- Vegetables -->
+  <div class="category">
+    <label>
+      <input type="checkbox" class="category-checkbox" data-category="vegetables">
+      Vegetables
+    </label>
+    <div class="items">
+      <label><input type="checkbox" class="child-checkbox" data-category="vegetables"> Carrot</label>
+      <label><input type="checkbox" class="child-checkbox" data-category="vegetables"> Broccoli</label>
+      <label><input type="checkbox" class="child-checkbox" data-category="vegetables"> Potato</label>
+    </div>
+  </div>
+
+  <script>
+    const selectAll = document.getElementById("selectAll");
+    const categoryCheckboxes = document.querySelectorAll(".category-checkbox");
+    const childCheckboxes = document.querySelectorAll(".child-checkbox");
+
+    // Select All logic
+    selectAll.addEventListener("change", (e) => {
+      const checked = e.target.checked;
+      categoryCheckboxes.forEach(cb => {
+        cb.checked = checked;
+        cb.indeterminate = false;
+      });
+      childCheckboxes.forEach(cb => cb.checked = checked);
+    });
+
+    // Category-level logic
+    categoryCheckboxes.forEach(category => {
+      category.addEventListener("change", (e) => {
+        const checked = e.target.checked;
+        const categoryName = category.dataset.category;
+        document.querySelectorAll(`.child-checkbox[data-category="${categoryName}"]`)
+          .forEach(cb => cb.checked = checked);
+        updateSelectAllState();
+      });
+    });
+
+    // Child-level logic
+    childCheckboxes.forEach(child => {
+      child.addEventListener("change", () => {
+        const categoryName = child.dataset.category;
+        const children = document.querySelectorAll(`.child-checkbox[data-category="${categoryName}"]`);
+        const parent = document.querySelector(`.category-checkbox[data-category="${categoryName}"]`);
+        const checkedChildren = Array.from(children).filter(cb => cb.checked).length;
+
+        // Update parent state (checked, unchecked, indeterminate)
+        if (checkedChildren === children.length) {
+          parent.checked = true;
+          parent.indeterminate = false;
+        } else if (checkedChildren === 0) {
+          parent.checked = false;
+          parent.indeterminate = false;
+        } else {
+          parent.checked = false;
+          parent.indeterminate = true;
+        }
+
+        updateSelectAllState();
+      });
+    });
+
+    // Update Select All checkbox state
+    function updateSelectAllState() {
+      const totalChildren = childCheckboxes.length;
+      const checkedChildren = Array.from(childCheckboxes).filter(cb => cb.checked).length;
+
+      if (checkedChildren === totalChildren) {
+        selectAll.checked = true;
+        selectAll.indeterminate = false;
+      } else if (checkedChildren === 0) {
+        selectAll.checked = false;
+        selectAll.indeterminate = false;
+      } else {
+        selectAll.checked = false;
+        selectAll.indeterminate = true;
+      }
+    }
+  </script>
+</body>
+</html>
