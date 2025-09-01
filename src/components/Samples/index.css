@@ -1,0 +1,29 @@
+.sample_imgs{
+
+}
+
+
+
+
+/* Mobile-first default */
+@media (max-width: 768px){
+    .sample_mobile{
+        display: block;
+    }
+
+    .sample_lap{
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    .sample_mobile{
+        display: none;
+    }
+
+    .sample_lap{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+}

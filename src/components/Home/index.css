@@ -1,0 +1,338 @@
+/* .bg_container{
+    padding: 10px;
+}
+
+.heading{
+    font-size: 30px;
+    width: 60%;
+}
+
+.note{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    background-color: lightgray;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+.name_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reviews{
+    display: flex;
+    align-items: center;
+}
+
+.trade_img_container{
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.trade-imgs{
+    width:40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.sample_img_container{
+    flex-wrap: wrap;
+}
+
+.sample-imgs{
+    width: 80px;
+    height: 60px;
+}
+
+.purchase_deals_container{
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.purchase_deals_one{
+    background-color: #F1B434;
+    border-radius: 30px;
+    width: 40%;
+    height: 64px;
+    top: 28px;
+    left: 30px;
+    opacity: 1;
+    border-radius: 50px;
+    border-width: 1px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.purchase_deals_two{
+    border: 2px solid #F1B434;
+    border-radius: 30px;
+    width: 40%;
+    height: 64px;
+    top: 28px;
+    left: 30px;
+    opacity: 1;
+    border-radius: 50px;
+    border-width: 1px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.quantity_btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F1B434;
+    border-radius: 30px;
+    width: 40%;
+    height: 64px;
+    top: 28px;
+    left: 30px;
+    opacity: 1;
+    border-radius: 50px;
+    border-width: 1px;
+}
+
+.add_btn{
+    color: white;
+    background-color: black;
+     border-radius: 30px;
+    width: 40%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beauty-bundle-imgs{
+    width: 50px;
+    height: 50px;
+}
+
+.beauty_bundle{
+    display: flex;
+    align-items: center;
+}
+
+.bundle_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+.bundle_add_container{
+    width: 40%;
+}
+
+.bundle_add_btn{
+    width: 100%;
+    color: white;
+    background-color: black;
+     border-radius: 30px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.color-img{
+    width: 15px;
+    height: 15px;
+}
+
+.slide_details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+  font-size: 30px; 
+}
+
+@media (min-width: 769px){
+  .identify_resolution{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}  */
+
+/* General Styles */
+.bg_container {
+    padding: 10px;
+}
+
+.heading {
+    font-size: 30px;
+    width: 60%;
+}
+
+.note {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    background-color: lightgray;
+    border-radius: 30px;
+    padding: 8px;
+}
+
+.name_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+}
+
+.trade_img_container,
+.sample_img_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.trade-imgs {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.sample-imgs {
+    width: 80px;
+    height: 60px;
+}
+
+/* Purchase Buttons */
+.purchase_deals_container {
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.purchase_deals_one,
+.purchase_deals_two,
+.quantity_btn {
+    width: 40%;
+    height: 64px;
+    border-radius: 50px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.purchase_deals_one {
+    background-color: #F1B434;
+}
+
+.purchase_deals_two {
+    border: 2px solid #F1B434;
+}
+
+.quantity_btn {
+    background-color: #F1B434;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.add_btn,
+.bundle_add_btn {
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+}
+
+.add_btn {
+    width: 40%;
+}
+
+.bundle_add_btn {
+    width: 100%;
+}
+
+.beauty-bundle-imgs {
+    width: 50px;
+    height: 50px;
+}
+
+.beauty_bundle {
+    display: flex;
+    align-items: center;
+}
+
+.bundle_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+.bundle_add_container {
+    width: 40%;
+}
+
+.color-img {
+    width: 15px;
+    height: 15px;
+}
+
+.slide_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Slick Slider Arrow Customization */
+.slick-prev:before,
+.slick-next:before {
+    color: black !important;
+    font-size: 30px;
+}
+
+/* Responsive Layouts */
+@media (max-width: 767px) {
+    .identify_resolution {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px){
+    .identify_resolution{
+        display: flex;
+        flex-direction: row;
+    }
+}
